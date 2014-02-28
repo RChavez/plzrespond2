@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="img/favicon.ico">
+    <title>InvAid</title>
+
+    <!-- Bootstrap -->
+    <link href="stylesheets/bootstrap.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Exo+2:300,700' rel='stylesheet' type='text/css'>  
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/jointeam.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body class="what-we-do">
+  
+<nav id="more-top-margin" class="navbar navbar-default custom-bottom-margin" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">InvAid</a>
+    </div>
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+<div class="container body">
+
+  <div id="more-top-margin" class="custom-well-size well">
+    <h3 class="h3-no-vert-margin">
+      <p class="text-center">Join Team</p>
+    </h3>
+    <p class="text-center">Enter the Team Code of the team you wish to join.</p>
+
+    <form class="form-horizontal" role="form">
+      <div class="no-margin form-group">
+        <label for="code" class="col-sm-2 control-label">Team Code:</label>
+        <div class="col-sm-10">
+          <input type="code" class="form-control larger-text" id="code" placeholder="e.g. AAA-1111">
+          <p class="little-margin">Not case sensitive</p>
+        </div>
+      </div>
+      <div class="form-group form-inline pull-left">
+        <label class="sr-only" for="Cancel">Cancel</label>
+        <div class="col-xs-4 col-sm-1">
+          <a href="accounttype" id="custom-margin-top-create-login" class="btn btn-default">Cancel</a>
+        </div>
+      </div>
+      <div class="form-group pull-right">
+        <label class="sr-only" for="Continue">Continue</label>
+        <div class="col-xs-4 col-sm-1">
+          <a href="jointeamconfirm" id="custom-margin-top-create-login" type="submit" class="btn btn-info">Continue</a>
+        </div>
+      </div>
+    </form>
+  </div>
+  </div>
+
+  <hr class="divider">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.maskedinput.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      jQuery(function($) {
+        $.mask.definitions['A']="[A-z]";
+        $("#code").mask("AAA-9999", {placeholder:" "});
+      });
+    </script>
+  </body>
+</html>

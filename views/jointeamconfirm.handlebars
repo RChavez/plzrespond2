@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="img/favicon.ico">
+    <title>InvAid</title>
+
+    <!-- Bootstrap -->
+    <link href="stylesheets/bootstrap.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Exo+2:300,700' rel='stylesheet' type='text/css'>  
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/newteamconfirm.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body class="body">
+  
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <a id="show-alert" class="navbar-brand" href="login">InvAid</a>
+      </div>
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <div class="container">
+    <div id="custom-well-size" class="well">
+      <h3 class="h3-no-vert-margin">
+        <p class="text-center">Review and Confirm</p>
+      </h3>
+      <p class="text-center">You have requested to join the following team:</p>
+      <div class="lead">
+<!-- ======= BACKEND STUFF START HERE ======= -->
+<!-- ====== Populate with team's name ======= --> 
+        Organization: <p><kbd> plzrespond </kbd></p>
+<!-- ======= BACKEND STUFF END HERE ======= -->
+      </div>
+      <div class="lead">
+<!-- ======= BACKEND STUFF START HERE ======= -->
+<!-- ===== Populate with team's country ===== --> 
+        Country: <p><kbd> United States of America </kbd></p>
+      </div>
+      <hr>
+      <p class="text-center">Please review the following information.</p>
+      <div class="lead">
+<!-- ======= BACKEND STUFF START HERE ======= -->
+<!-- ====== Populate with user's name ======= --> 
+        Name: <p><kbd> Ryan Chavez </kbd></p>
+<!-- ======== BACKEND STUFF END HERE ======== -->
+      </div>
+      <div class="lead">
+<!-- ======= BACKEND STUFF START HERE ======= -->
+<!-- ====== Populate with user's email ====== --> 
+        Email: <p><kbd> ryan22chavez@gmail.com </kbd></p>
+<!-- ======= BACKEND STUFF START HERE ======= -->
+      </div>
+      <hr class="custom-bottom-margin">
+      <form>
+        <div class="form-group form-inline pull-left">
+          <label class="sr-only" for="Edit">Edit</label>
+          <div class="col-xs-4 col-sm-1">
+            <a href="jointeam" id="custom-margin-top-create-login" class="btn btn-default">Edit</a>
+          </div>
+        </div>
+        <div class="form-group pull-right">
+          <label class="sr-only" for="Finish">Finish</label>
+          <div class="col-xs-4 col-sm-1">
+            <a href="success" id="custom-margin-top-create-login" type="submit" class="btn btn-info">Finish</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.js"></script>
+
+  </body>
+</html>

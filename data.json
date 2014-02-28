@@ -1,0 +1,28 @@
+{
+	"items": [
+		{
+			"id_number": "1",
+			"item_name": "Syringes",
+			"quantity": "25",
+			"threshold": "50",
+			"modified_by": "Ryan Chavez",
+			"last_modified": "Monday"
+		},
+		{
+			"id_number": "2",
+			"item_name": "Blankets",
+			"quantity": "32",
+			"threshold": "10",
+			"modified_by": "Brian Lai",
+			"last_modified": "Tuesday"
+		},
+		{
+			"id_number": "3",
+			"item_name": "Latex Stuff",
+			"quantity": "69",
+			"threshold": "2",
+			"modified_by": "Joshua Liu",
+			"last_modified": "Yesterday"
+		}
+	]
+}

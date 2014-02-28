@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="img/favicon.ico">
+    <title>InvAid</title>
+
+    <!-- Bootstrap -->
+    <link href="stylesheets/bootstrap.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Exo+2:300,700' rel='stylesheet' type='text/css'>  
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body class="body">
+  
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">InvAid</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="dashboard">Dashboard</a></li>
+        <li><a href="inventory">Inventory</a></li>
+        <li><a href="chat">Messenger</a></li>
+        <li><a href="logout">Log Out</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+<!-- ===========BACKEND STUFF START HERE ==========-->
+<!-- Need to write <li> block to populate <a> tag with logged in user's name -->
+        <li><a  id="current-user-name" class="disabled" href="#">Logged in as: {{{name}}} </a></li>
+<!-- ===========BACKEND STUFF END HERE ==========-->
+      </ul>
+      
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="container">
+<!-- Inventory panel start -->
+  <div class="well">
+    <h3 class="h3-no-vert-margin"><p class="text-center">Inventory</p></h3>
+<!-- Button for Inventory Start-->
+    <div class="centered">
+      <a href="inventory">
+        <button type="button" class="btn btn-info btn-lg btn-block">
+<!-- ===========BACKEND STUFF START HERE ==========-->
+<!-- <kbd> portion will be populated by number = to changes to inventory since last login -->
+          <h4><kbd> 3</kbd> new inventory changes.</h4>
+<!-- =========== BACKEND STUFF END HERE ===========-->
+        </button>
+      </a>
+    </div>
+<!-- Button for Inventory End-->
+    <hr>
+<!-- Carousel for inventory changes start -->
+    <div id="carousel1" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner2">
+<!-- ===========BACKEND STUFF START HERE ==========-->
+<!-- Need to write a <div class="item"> block for each new inventory change -->
+        <div class="item active">
+            <h5><p class="text-center">Brian added 15(20ct., 1") Bandages.</p></h5>
+        </div>
+        <div class="item">
+            <h5><p class="text-center">Brian removed 10 Blankets.</p></h5>
+        </div>
+        <div class="item">
+            <h5><p class="text-center">Josh added 1 Kitten.</p></h5>
+        </div>
+      </div>
+<!-- =========== BACKEND STUFF END HERE ===========-->
+<!-- Indicators -->
+<!-- ===========BACKEND STUFF START HERE ==========-->
+<!-- Need to write <ol> with as many <li>'s as there are new inventory changes -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel1" data-slide-to="1"></li>
+        <li data-target="#carousel1" data-slide-to="2"></li>
+      </ol>
+<!-- =========== BACKEND STUFF END HERE ===========-->
+    </div>
+<!-- Carousel for inventory changes end -->
+    <hr>
+  </div>
+</div>
+<!-- Inventory panel end -->
+<hr class="divider">
+<!-- Messenger panel start -->
+<div class="container">
+  <div class="well">
+    <h3 class="h3-no-vert-margin"><p class="text-center">Messenger</p></h3>
+<!-- Button for Messenger Start-->
+    <div class="centered">
+      <a href="chat">
+        <button type="button" class="btn btn-info btn-lg btn-block">
+<!-- ===========BACKEND STUFF START HERE ==========-->
+<!-- <kbd> portion will be populated by number = to new messages since last login -->
+          <h4><kbd> 2</kbd> new messages.</h4>
+<!-- =========== BACKEND STUFF END HERE ===========-->
+        </button>
+      </a>
+    </div>
+    <hr class="carousel-divider">
+<!-- Carousel for new messages start -->
+    <div id="carousel2" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+<!-- ===========BACKEND STUFF START HERE ==========-->
+<!-- Need to write a <div class="item"> block for each new message -->
+        <div class="item active">
+          <div class="row">
+<!-- Name of person message is from -->
+            <p class="no-margin">Brian Lai:</p>
+          </div>
+          <div class="row">
+<!-- Messege -->  
+            <h5 class="carousel-h5">Hey guys, I just received a bunch of bandages from the village I was just at from another doctor. Score! What else is new? Um well this now is a really long message but I'm just testing the dashboard space.</h5>  
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="row">
+<!-- Name of person message is from -->
+            <p class="no-margin">Joshua Liu:</p>
+          </div>
+          <div class="row">
+<!-- Messege -->  
+            <h5 class="carousel-h5">I found an adorable kitten! I'm going to keep him!</h5>              
+          </div>
+        </div>
+      </div>
+
+<!-- =========== BACKEND STUFF END HERE ===========-->
+<!-- Indicators -->
+<!-- ===========BACKEND STUFF START HERE ==========-->
+<!-- Need to write <ol> with as many <li>'s as there are new messages -->
+      <ol id="higher-indicators" class="carousel-indicators">
+        <li data-target="#carousel2" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel2" data-slide-to="1"></li>
+      </ol>
+<!-- =========== BACKEND STUFF END HERE ===========-->
+    </div>
+<!-- Carousel for new messages end -->
+    <hr class="carousel-hr">
+  </div>
+<!-- Messenger panel end -->
+</div>
+<hr class="divider">
+<div class="container">
+  <div class="well">
+    <div class="text-center">
+    <h4 class="no-margin">Your Team Code is:</h4>
+<!-- ======= BACKEND STUFF START HERE ======= -->
+<!-- === Populate with team's uniqie code === --> 
+      <h1><kbd>ABC-1234</kbd></h1>
+<!-- ======== BACKEND STUFF END HERE ======== -->
+    </div>
+  </div>
+</div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.js"></script>
+  </body>
+</html>

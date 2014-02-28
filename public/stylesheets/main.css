@@ -1,0 +1,95 @@
+.body {
+	background-color: #bdc3c7; /* #fff; #95a5a6; */
+	font-family: 'Exo 2', sans-serif;
+	font-weight: 300pt;
+}
+.invbody {
+	background-color: #3498db; /* #bdc3c7; /* #2ecc71; /* #ecf0f1; */
+	font-family: 'Exo 2', sans-serif;
+	font-weight: 300pt;
+}
+.chatbody {
+/*	background: url(https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-prn1/t31/1669726_10151960800018174_1612925819_o.jpg) no-repeat center center fixed;
+	-webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
+*/	font-family: 'Exo 2', sans-serif;
+	font-weight: 300pt;
+	height: 100%;
+	background-color: #bdc3c7; /* #95a5a6; */
+}
+h5 {
+	color: #ecf0f1;
+}
+.centered {
+	float: none;
+	margin: 0 auto;
+}
+.carousel-divider {
+	margin-top: 20px;
+	margin-bottom: 3px;
+}
+
+.carousel-h5 {
+	margin-top: 1px;
+	margin-bottom: 0px;
+}
+.carousel-hr {
+	margin-top: 3px;
+	margin-bottom: 20px;
+}
+p.no-margin {
+	margin-top: -5px;
+	font-weight: bold;
+}
+.no-margin {
+	margin: auto 0;
+	color: #000;
+}
+.little-margin {
+	margin: 2px 0 0px; 0;
+	color: #000;
+}
+.divider {
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+.h3-no-vert-margin {
+	margin-top: 5px; 
+}
+
+p.text-center {
+	margin: 0 auto;
+}
+
+#chatpicture {
+	overflow: hidden;
+	width: 100%;
+}
+.what-we-do {
+	background-color: #2ecc71; /* #3498db; */
+	margin-top: -20px;
+	padding-top: 5px;
+}
+.custom-bottom-margin {
+	margin-bottom: 0;
+}
+.custom-border {
+	border: transparent;
+}
+#current-user-name {
+	background-color: #5bc0de;
+	font-size: smaller;
+	color: #000;
+}
+#custom-margin-top-create-login {
+	margin-top: 15px;
+}
+
+#more-top-margin {
+	margin-top: 14px; 
+}
+#higher-indicators {
+	bottom: -50px; /* RYAN CHANGED FROM 10px to -50px SO INDICATORS DON'T OVERLAY ALERTS */
+}

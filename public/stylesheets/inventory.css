@@ -29,6 +29,14 @@ td.threshold-width {
 #status_menu {
 	height: 34px;
 }
+.remove_button {
+	height: 38px;
+}
+#status_menu2 {
+	height: 38px;
+	font-size: 8pt;
+	width: 92px;
+}
 .dropdown-menu > option > a {
   display: block;
   height: 34px;

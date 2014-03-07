@@ -70,16 +70,16 @@
 <!-- ===========BACKEND STUFF START HERE ==========-->
     <form class="form-inline" id="addFriendForm" role="form" method="get" action="/searchRedirect">
       <div class="form-group" id="search_reset_row">
-        <div class="col-xs-6">
-          <input type="text" class="form-control" id="name" placeholder="Search Inventory" name="item_name">
+        <div class="col-xs-8">
+          <input type="text" class="form-control" id="name" placeholder="Search" name="item_name">
         </div>
-        <div class="col-xs-2">
-          <input type="submit" id="submitBtn" class="btn btn-default pull-right" value="Reset" role="form" method="get" action="/inventory">
+        <div class="col-xs-3">
+          <input type="submit" id="submitBtn" class="btn btn-default" value="Reset" role="form" method="get" action="/inventory">
         </div>
-        <div class="col-xs-2">
+        <!-- <div class="col-xs-4">
           <div class="dropdown">
-            <button class="btn dropdown-toggle btn-default submenu_width" type="button" id="dropdownMenu1" data-toggle="dropdown">
-              Sort by:   
+            <button class="btn dropdown-toggle btn-default" type="button" id="dropdownMenu1" data-toggle="dropdown">
+              Sort   
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
@@ -89,7 +89,7 @@
               <li class="sortModified" role="presentation"><a role="menuitem" href="#">Modified By</a></li>
             </ul>
               </div>
-        </div>
+        </div> -->
       </div>
     </form>
 <!-- Searching should filter out unmatched items -->

@@ -33,8 +33,11 @@ exports.addItem = function(req, res) {
         item_name: req.query.item_name,
         status: req.query.status,
         modified_by: req.query.modified_by
-    })
 
+    })
+    if(req.query.status == "Empty" || req.query.status == "Restock Now") {
+            newItem.red = "yes";
+        }
     newItem.save(afterAdd);
 
     function afterAdd(err, items) {
@@ -125,6 +128,15 @@ function compareStatus(a,b) {
     }
   return 0;
 }
+
+function compareModifiedBy(a,b) {
+  if (a.modified_by < b.modified_by)
+     return -1;
+  if (a.modified_by > b.modified_by)
+    return 1;
+  return 0;
+}
+
 
 exports.sortByName = function(req, res) {
     models.Item

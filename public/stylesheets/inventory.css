@@ -11,13 +11,12 @@ td.threshold-width {
 }
 .table {
 	margin-top: 10px;
-	border: solid 10px #ddd;
-	border-left: none;
-	border-right: none;
+	border-top: solid 5px #eee;
 }
 .panel {
 	margin-bottom: 0;
 }
+
 .remove {
 	background-color: #ccc;
 }
@@ -25,8 +24,12 @@ td.threshold-width {
 	padding-top: 0px;
 	padding-bottom: 0px;
 }
+#status_menu {
+	height: 34px;
+}
 .dropdown-menu > option > a {
   display: block;
+  height: 34px;
   padding: 3px 20px;
   clear: both;
   font-weight: normal;
@@ -39,4 +42,54 @@ td.threshold-width {
   color: #262626;
   text-decoration: none;
   background-color: #f5f5f5;
+}
+#search_reset_row {
+	margin-left: -15px;
+	margin-top: 25px;
+}
+.submenu_width {
+	min-width: 122px;
+}
+
+/* NEW INVENTORY STYLING */
+.item_row {
+	background-color: #ddd;
+	border: solid 2px #eee;
+	border-left: none;
+	border-right: none;
+	padding-top: 5px;
+}
+.item_row_height {
+	
+	font-weight: bold;
+}
+.item_name {
+	font-size: 10pt;
+}
+.item_number {
+	top: 15px;
+}
+.user_name {
+	display: inline-block;
+	font-weight: bold;
+}
+.modified_by {
+	padding-top: 6px;
+	font-size: 8pt;
+}
+.qty_title {
+	
+	padding-bottom: 5px;
+	font-size: 8pt;
+	text-align: left;
+}
+.quantity {
+	font-size: 8pt;
+	text-align: left;
+	font-weight: bold;
+}
+.status_button {
+}
+#unmargined_list {
+	margin-top: -25px;
 }

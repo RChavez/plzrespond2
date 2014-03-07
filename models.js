@@ -5,6 +5,7 @@ var inventorySchema = Mongoose.Schema({
   item_name: String,
   status: String,
   modified_by: String,
+  red: String,
   last_modified: {type: Date, default: Date.now}
 });
 

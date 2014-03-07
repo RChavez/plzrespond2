@@ -86,6 +86,14 @@ app.post('/signIn', function(req, res) {
   });
 });
 
+
+app.get('/editItem', function (req, res) {
+  console.log("Look what I found: " + req.body.status);
+  //req.session = req.body.status;
+  res.redirect('/chat');
+
+});
+ 
 app.post('/createLoginForm', function (req, res) {
     req.session.tempName = req.body.name;
     req.session.tempEmail = req.body.email;
@@ -175,15 +183,3 @@ var chatSchema = mongoose.Schema({
 
 //creates an actual instance of chatSchema called 'Message'
 var Chat = mongoose.model('Message', chatSchema);
-
-//MongoDB for inventory
-
-// var itemSchema = mongoose.Schema({
-//   item_name: String,
-//   quantity: Number,
-//   threshold: Number,
-//   modified_by: String,
-//   last_modified: String
-// });
-
-// var ItemField = mongoose.model('Item', itemSchema);

@@ -1,11 +1,13 @@
 td.item-width {
-	min-width: 110px;
+	width: 50%
 }
 
 td.qty-width {
-	min-width: 50px;
+	width: 40%
 }
-
+td.mod-width {
+	width: 40%
+}
 td.threshold-width {
 	min-width: 50px;
 }

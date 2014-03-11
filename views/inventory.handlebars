@@ -70,16 +70,16 @@
 <!-- ===========BACKEND STUFF START HERE ==========-->
     <form class="form-inline" id="addFriendForm" role="form" method="get" action="/searchRedirect">
       <div class="form-group" id="search_reset_row">
-        <div class="col-xs-8">
-          <input type="text" class="form-control" id="name" placeholder="Search" name="item_name">
+        <div class="col-xs-6">
+          <input type="text" class="form-control" id="name" placeholder="Search Inventory" name="item_name">
         </div>
-        <div class="col-xs-3">
-          <input type="submit" id="submitBtn" class="btn btn-default" value="Reset" role="form" method="get" action="/inventory">
+        <div class="col-xs-2">
+          <input type="submit" id="submitBtn" class="btn btn-default pull-right" value="Reset" role="form" method="get" action="/inventory">
         </div>
-        <!-- <div class="col-xs-4">
+        <div class="col-xs-2">
           <div class="dropdown">
-            <button class="btn dropdown-toggle btn-default" type="button" id="dropdownMenu1" data-toggle="dropdown">
-              Sort   
+            <button class="btn dropdown-toggle btn-default submenu_width" type="button" id="dropdownMenu1" data-toggle="dropdown">
+              Sort by:   
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
@@ -89,7 +89,7 @@
               <li class="sortModified" role="presentation"><a role="menuitem" href="#">Modified By</a></li>
             </ul>
               </div>
-        </div> -->
+        </div>
       </div>
     </form>
 <!-- Searching should filter out unmatched items -->
@@ -102,13 +102,14 @@
 
 
   <!-- Table -->
-  
-  <table class="table">
+  <table id="margin-left" class="table">
     <thead class="">
       <tr>
+        <th class="id-name">#</th>
         <th class="item-name"><a href='/sortNameRedirect'>Item Name</a></th>
-        <th class="qty-name"><a href='/sortStatusRedirect'>Quantity</a></th>
+        <th class="qty-name"><a href='/sortStatusRedirect'>Status</a></th>
         <th class="modified-name"><a href='/sortModifiedByRedirect'>Modified By</a></th>
+        <th class="">Remove</th>
       </tr>
     </thead>
     <tbody>
@@ -117,38 +118,98 @@
       <tr class="newitem">
         <form id="addFriendForm" role="form" method="get" action="/addRedirect">
           <div class="form-group">
+            <td class="id-width"></td>
             <td class="item-width">
               <input type="text" class="form-control" id="name" placeholder="Item Name" name="item_name" required>
             </td>
             <td class="qty-width">
-              <select class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" id="status_menu" name="status" required>
+              <select class="btn dropdown-toggle" type="button" data-toggle="dropdown" id="status_menu" name="status" required>
               <ul class="dropdown-menu" role="menu" aria-labelledby="status_menu">
                 <option value="Normal" selected><a role="menuitem" tabindex="-1" href="#">Normal</a></option>
-                <option value="Low"><a role="menuitem" tabindex="-1" href="#">Running Low</a></option>
+                <option value="Low"><a role="menuitem" tabindex="-1" href="#">Low</a></option>
                 <option value="Restock Now"><a role="menuitem" tabindex="-1" href="#">Restock Now</a></option>
                 <option value="Empty"><a role="menuitem" tabindex="-1" href="#">Empty</a></option>
                 </ul>
               </select>
             </td>
-            <td class="mod-width">
+            <td>
               <input type="submit" id="submitBtn" class="btn btn-default" value="Add Item">
             </td>
             <input type="hidden" class="form-control" name="modified_by" value="{{{name}}}">
+            <td>
+              <fieldset disabled>
+                <button type="submit" class="btn btn-default">X</button>
+              </fieldset>
+            </td>
           </div>
         </form>
       </tr>
-    </tbody>
-  </table>
 <!-- ===========BACKEND STUFF END HERE ==========-->
 <!-- ===========BACKEND STUFF START HERE ==========-->
+<!-- Need to write a <tr> block for each item tied to account and highlight with appropirate color if recently changed or lower than threshold -->
+
+<!-- THIS STUFF WILL BE REPLACED WITH MONGODB QUERIES -->
+  <script>
+    var i = 0;
+  </script>
+    {{#each items}}
+      {{#if red.length}}
+        <tr class="lowcount">
+      {{else}}
+        <tr>
+      {{/if}}
+        <script>
+          i = i + 1;
+          document.write("<td>" + i.toString() + "</td>");
+        </script>
+        <td contenteditable>{{item_name}}</td>
+        <td id ="foo">
+          <select class="eastereggsnigga" class="btn dropdown-toggle" type="button" data-toggle="dropdown" id="status_menu" name="status" required>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="status_menu">
+              <option value="{{status}}">{{status}}</option>
+              <option value="Normal"><a role="menuitem" tabindex="-1" href="#">Normal</a></option>
+              <option value="Low"><a role="menuitem" tabindex="-1" href="#">Low</a></option>
+              <option value="Restock Now"><a role="menuitem" tabindex="-1" href="#">Restock Now</a></option>
+              <option value="Empty"><a role="menuitem" tabindex="-1" href="#">Empty</a></option>
+            </ul>
+          </select>
+        </td>
+        <td>{{modified_by}}</td>
+        <form id="addFriendForm" role="form" method="get" action="/removeRedirect" onsubmit="return confirm('Do you want to remove &quot;{{{item_name}}}&quot; from the inventory?');">
+          <div class="form-group">
+              <input type="hidden" class="form-control" name="item_id" value="{{{_id}}}">
+            <td>
+              <input type="submit" id="submitBtn" class="btn btn-default no-padding-button" value="X">
+            </td>
+          </div>
+        </form>
+      </tr>
+    {{/each}}
+
+<!-- ===========BACKEND STUFF START HERE ==========-->
+    </tbody>
+  </table>
+
   <script>
     if (i == 0) {
       document.write("<center>No Inventory Items Found</center>");
     }
   </script>
-<div id="unmargined_list" class="table">
+
   {{#each items}}
-  <div class="row item_row"> 
+  {{#if red.length}}
+    <div class="row item_row_red">
+  {{else}}
+    {{#if yellow.length}}
+      <div class="row item_row_yellow">
+    {{else}}
+      {{#if orange.length}}
+        <div class="row item_row_orange">
+      {{else}}
+        <div class="row item_row">
+      {{/if}}
+    {{/if}}
+  {{/if}} 
     <div class="col-xs-5">
       <div class="row item_row_height item_name">
         {{item_name}}
@@ -158,12 +219,15 @@
       </div>
     </div>
     <div class="col-xs-4">
+      <div class="row item_row_height qty_title">
+        Status
+      </div>
       <div class="row quantity">
-        <select class="btn btn-default eastereggsnigga" type="button" data-toggle="dropdown" id="status_menu2" name="status" required>
-            <ul class="" role="menu" aria-labelledby="status_menu">
+        <select class="eastereggsnigga" class="btn dropdown-toggle" type="button" data-toggle="dropdown" id="status_menu" name="status" required>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="status_menu">
               <option value="{{status}}">{{status}}</option>
-              <option value="Normal"><a role="menuitem" tabindex="-1" href="#">Normal</a></option>
-              <option value="Low"><a role="menuitem" tabindex="-1" href="#">Running Low</a></option>
+              <option value="Normal"><a role="menuitem" tabindex="-1" href="#">Enough</a></option>
+              <option value="Low"><a role="menuitem" tabindex="-1" href="#">Getting Low</a></option>
               <option value="Restock Now"><a role="menuitem" tabindex="-1" href="#">Restock Now</a></option>
               <option value="Empty"><a role="menuitem" tabindex="-1" href="#">Empty</a></option>
             </ul>
@@ -175,18 +239,15 @@
           <form id="addFriendForm" role="form" method="get" action="/removeRedirect" onsubmit="return confirm('Do you want to remove &quot;{{{item_name}}}&quot; from the inventory?');">
           <div class="form-group">
               <input type="hidden" class="form-control" name="item_id" value="{{{_id}}}">
-              <input type="submit" id="submitBtn" class="btn btn-default remove_button" value="Remove">
+            <td>
+              <input type="submit" id="submitBtn" class="btn btn-default no-padding-button" value="Remove">
+            </td>
           </div>
         </form>
       </div>
     </div>
   </div>
   {{/each}}
-</div>
-<!-- ===========BACKEND STUFF START HERE ==========-->
-
-
-
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>

@@ -35,9 +35,15 @@ exports.addItem = function(req, res) {
         modified_by: req.query.modified_by
 
     })
-    if(req.query.status == "Empty" || req.query.status == "Restock Now") {
-            newItem.red = "yes";
-        }
+    if(req.query.status == "Empty") {
+        newItem.red = "yes";
+    }
+    else if(req.query.status == "Restock Now") {
+        newItem.orange = "yes";
+    }
+    else if(req.query.status == "Low") {
+        newItem.yellow = "yes";
+    }
     newItem.save(afterAdd);
 
     function afterAdd(err, items) {

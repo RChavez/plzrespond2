@@ -1,24 +1,23 @@
 td.item-width {
-	width: 50%
+	min-width: 110px;
 }
 
 td.qty-width {
-	width: 40%
+	min-width: 50px;
 }
-td.mod-width {
-	width: 40%
-}
+
 td.threshold-width {
 	min-width: 50px;
 }
 .table {
 	margin-top: 10px;
-	border-top: solid 5px #eee;
+	border: solid 10px #ddd;
+	border-left: none;
+	border-right: none;
 }
 .panel {
 	margin-bottom: 0;
 }
-
 .remove {
 	background-color: #ccc;
 }
@@ -26,22 +25,8 @@ td.threshold-width {
 	padding-top: 0px;
 	padding-bottom: 0px;
 }
-#status_menu {
-	height: 34px;
-}
-.remove_button {
-	height: 30px;
-	margin-top: 4px;
-}
-#status_menu2 {
-	margin-top: 4px;
-	height: 30px;
-	font-size: 8pt;
-	width: auto;
-}
 .dropdown-menu > option > a {
   display: block;
-  height: 34px;
   padding: 3px 20px;
   clear: both;
   font-weight: normal;
@@ -62,14 +47,18 @@ td.threshold-width {
 .submenu_width {
 	min-width: 122px;
 }
+#margin-left {
+	padding-left: 5px;
+}
 
 /* NEW INVENTORY STYLING */
 .item_row {
-	background-color: #ddd;
+	background-color: #ecf0f1;
 	border: solid 2px #eee;
 	border-left: none;
 	border-right: none;
 	padding-top: 5px;
+	padding-bottom: 5px;
 }
 .item_row_height {
 	
@@ -101,7 +90,34 @@ td.threshold-width {
 	font-weight: bold;
 }
 .status_button {
+	padding-top: 2px;
+	padding-bottom: 0px;	
 }
-#unmargined_list {
-	margin-top: -25px;
+
+.item_row_red {
+	background-color: #c0392b;
+	border: solid 2px #eee;
+	border-left: none;
+	border-right: none;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+
+.item_row_orange {
+	background-color: #e67e22;
+	border: solid 2px #eee;
+	border-left: none;
+	border-right: none;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.item_row_yellow {
+	background-color: #f1c40f;
+	border: solid 2px #eee;
+	border-left: none;
+	border-right: none;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }

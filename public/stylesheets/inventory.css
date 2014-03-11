@@ -1,19 +1,23 @@
 td.item-width {
-	min-width: 110px;
+	min-width: 60%;
 }
 
 td.qty-width {
-	min-width: 50px;
+	min-width: 50%;
 }
-
+td.mod-width {
+	min-width: 50%;
+}
+td.modified-name {
+	
+}
 td.threshold-width {
-	min-width: 50px;
+	
 }
 .table {
 	margin-top: 10px;
-	border: solid 10px #ddd;
-	border-left: none;
-	border-right: none;
+	border-top: solid 5px #ddd;
+	border-bottom: solid 5px #ddd;
 }
 .panel {
 	margin-bottom: 0;
@@ -48,10 +52,13 @@ td.threshold-width {
 	min-width: 122px;
 }
 #margin-left {
-	padding-left: 5px;
+	padding-left: 0px;
 }
 
 /* NEW INVENTORY STYLING */
+#unmargined_list {
+	margin-top: -5px;
+}
 .item_row {
 	background-color: #ecf0f1;
 	border: solid 2px #eee;

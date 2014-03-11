@@ -40,7 +40,7 @@
       <div class="lead">
 <!-- ======= BACKEND STUFF START HERE ======= -->
 <!-- ====== Populate with team's name ======= --> 
-        Organization: <p><kbd> plzrespond </kbd></p>
+        Organization: <p><kbd id="team">  </kbd></p>
 <!-- ======= BACKEND STUFF END HERE ======= -->
       </div>
       <div class="lead">
@@ -53,17 +53,17 @@
       <div class="lead">
 <!-- ======= BACKEND STUFF START HERE ======= -->
 <!-- ====== Populate with user's name ======= --> 
-        Name: <p><kbd> Ryan Chavez </kbd></p>
+        Name: <p><kbd id="name"> </kbd></p>
 <!-- ======== BACKEND STUFF END HERE ======== -->
       </div>
       <div class="lead">
 <!-- ======= BACKEND STUFF START HERE ======= -->
 <!-- ====== Populate with user's email ====== --> 
-        Email: <p><kbd> ryan22chavez@gmail.com </kbd></p>
+        Email: <p><kbd id="email"> </kbd></p>
 <!-- ======= BACKEND STUFF START HERE ======= -->
       </div>
       <hr class="custom-bottom-margin">
-      <form>
+      <form method="post" action="/confirmAccount">
         <div class="form-group form-inline pull-left">
           <label class="sr-only" for="Edit">Edit</label>
           <div class="col-xs-4 col-sm-1">
@@ -73,7 +73,8 @@
         <div class="form-group pull-right">
           <label class="sr-only" for="Finish">Finish</label>
           <div class="col-xs-4 col-sm-1">
-            <a href="success" id="custom-margin-top-create-login" type="submit" class="btn btn-info">Finish</a>
+            <!-- <a href="success" id="custom-margin-top-create-login" type="submit" class="btn btn-info">Finish</a> -->
+            <input type="submit" id="custom-margin-top-create-login" value="Finish" class="btn btn-info">
           </div>
         </div>
       </form>
@@ -85,6 +86,7 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.js"></script>
+    <script src="js/teamconfirm.js"></script>
 
   </body>
 </html>

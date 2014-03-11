@@ -40,7 +40,7 @@
     </h3>
     <p class="text-center">Enter the Team Code of the team you wish to join.</p>
 
-    <form class="form-horizontal" role="form">
+    <form class="form-horizontal" role="form" method="post" action ="/jointheteam">
       <div class="no-margin form-group">
         <label for="code" class="col-sm-2 control-label">Team Code:</label>
         <div class="col-sm-10">
@@ -57,7 +57,9 @@
       <div class="form-group pull-right">
         <label class="sr-only" for="Continue">Continue</label>
         <div class="col-xs-4 col-sm-1">
-          <a href="jointeamconfirm" id="custom-margin-top-create-login" type="submit" class="btn btn-info">Continue</a>
+          <!-- <a href="jointeamconfirm" id="custom-margin-top-create-login" type="submit" class="btn btn-info">Continue</a> -->
+          <input type="submit" id="custom-margin-top-create-login" value="Continue" class="btn btn-info">
+          
         </div>
       </div>
     </form>
@@ -72,10 +74,10 @@
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery.maskedinput.js" type="text/javascript"></script>
     <script type="text/javascript">
-      jQuery(function($) {
-        $.mask.definitions['A']="[A-z]";
-        $("#code").mask("AAA-9999", {placeholder:" "});
-      });
+      // jQuery(function($) {
+      //   $.mask.definitions['A']="[A-z]";
+      //   $("#code").mask("AAA-9999", {placeholder:" "});
+      // });
     </script>
   </body>
 </html>

@@ -97,7 +97,7 @@ app.get('/editItem', function (req, res) {
 app.post('/createLoginForm', function (req, res) {
     req.session.tempName = req.body.name;
     req.session.tempEmail = req.body.email;
-    res.redirect('/soloconfirm');
+    res.redirect('/accounttype');
 });
 
 app.get('/populateSoloConfirm', function (req, res) {
@@ -108,6 +108,22 @@ app.get('/populateSoloConfirm', function (req, res) {
     "tempName" : req.session.tempName,
     "tempEmail" : req.session.tempEmail
   });
+});
+
+app.get('/populateTeamConfirm', function (req, res) {
+  
+  console.log("populatingTeam");
+  console.log(req.session.tempEmail);
+  res.json( {
+    "tempName" : req.session.tempName,
+    "tempEmail" : req.session.tempEmail,
+    "tempTeam" : req.session.tempTeam
+  });
+});
+
+app.post('/jointheteam', function (req, res) {
+  req.session.tempTeam = "Salvation Squad - Haiti";
+  res.redirect('/jointeamconfirm');
 });
 
 app.post('/confirmAccount', function (req, res) {

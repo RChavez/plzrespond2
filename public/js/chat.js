@@ -45,6 +45,10 @@ function loadOldMsg(doc) {
 }
 
 function determineDateString(doc) {
+
+    // if you're reading this, don't laugh...
+    // was too lazy to read about JS timestamps
+
     var time = new Date(doc.timeStamp);
     var one_day=1000*60*60*24;
 
@@ -66,7 +70,13 @@ function determineDateString(doc) {
             suffix = 'AM';
 
 
-        return time.getHours() % 12 + ':' + time.getMinutes() + " " + suffix;
+        var minutes = time.getMinutes();
+        if(minutes < 10)
+            minutes = "0" + minutes;
+
+        console.log(minutes);
+
+        return time.getHours() % 12 + ':' + minutes + " " + suffix;
     }
 
 }
@@ -85,14 +95,6 @@ function sentMessage() {
 
 function setPseudo() {
     $.get('/pseudo', pseudoCallback);
-
-
-    // if ($("#pseudoInput").val() != "") {
-    //     socket.emit('pseudo', $("#pseudoInput").val());
-    //     $('#chatControls').show();
-    //     $('#pseudoInput').hide();
-    //     $('#pseudoSet').hide();
-    // }
 }
 
 function pseudoCallback(jsonObj) {

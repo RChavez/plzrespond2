@@ -29,6 +29,10 @@ td.threshold-width {
 	margin-top: 3px;
 	margin-bottom: -4px;
 }
+.button_height2 {
+	margin-top: 5px;
+	margin-bottom: -6px;
+}
 .dropdown-menu > option > a {
   display: block;
   padding: 3px 20px;
